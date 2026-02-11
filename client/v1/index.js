@@ -42,17 +42,25 @@ console.log(Best_deal);
  * 🧱
  */
 
-const nb_deals = deals.length;
-console.log(nb_deals);
-
 // 🎯 TODO 2: Number of deals
 // 1. Create a variable and assign it the number of deals
 // 2. Log the variable
+
+const nb_deals = deals.length;
+console.log(nb_deals);
 
 // 🎯 TODO 3: Website name
 // 1. Create a variable and assign it the list of shopping community name only
 // 2. Log the variable
 // 3. Log how many shopping communities we have
+
+const tab_name_deal = [];
+for (const deal of deals) {
+   tab_name_deal.push(deal.name);
+}
+const nb_name_deals = tab_name_deal.length;
+console.log(tab_name_deal);
+console.log(nb_name_deals);
 
 // 🎯 TODO 4: Sort by price
 // 1. Create a function to sort the deals by price
