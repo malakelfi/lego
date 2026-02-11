@@ -42,6 +42,9 @@ console.log(Best_deal);
  * 🧱
  */
 
+const nb_deals = deals.length;
+console.log(nb_deals);
+
 // 🎯 TODO 2: Number of deals
 // 1. Create a variable and assign it the number of deals
 // 2. Log the variable
