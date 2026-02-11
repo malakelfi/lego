@@ -559,6 +559,8 @@ camera.favorite = true;
 // 1. Log `sealedCamera` and `camera` variables
 // 2. What do you notice?
 
+// on fait une copie mais les deux variabkes on le meme chemin donc quand on modifie un l'autre se modifie aussi
+
 // we make (again) a new assignment again
 sealedCamera = {
   link: "https://www.vinted.fr/items/5563396347-lego-43230-omaggio-a-walter-disney-misb",
@@ -570,8 +572,14 @@ sealedCamera = {
 
 // 3. Update `camera` property with `favorite` to true WITHOUT changing sealedCamera properties
 
+let camera = { ...sealedCamera };
+camera.favorite = true;
 
-// 🎯 TODO 11: Compute the profitability
+console.log(sealedCamera);
+console.log(camera);
+
+
+// 🎯 TODO 16: Compute the profitability
 // From a specific deal called `deal`
 const deal = {
   'title':  'La caméra Hommage à Walt Disney',
@@ -583,7 +591,15 @@ const deal = {
 // 1. Compute the potential highest profitability based on the VINTED items
 // 2. Log the value
 
-
+let val_max = 0;
+for (const item of VINTED) {
+  if(val_max < Number(item.price))
+  {
+    val_max = Number(item.price);
+  }
+}
+const benefice = val_max - deal.price;
+console.log(benefice);
 
 /**
  * 🎬
