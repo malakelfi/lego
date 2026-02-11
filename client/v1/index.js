@@ -80,9 +80,31 @@ sortByPrice();
 // 2. Create a variable and assign it the list of deals by date from recent to old
 // 3. Log the variable
 
+function sortByDate() {
+  deals.sort((a, b) => b.published - a.published);
+  console.log(deals);
+}
+
+sortByDate();
+
+
 // 🎯 TODO 6: Filter a specific percentage discount range
 // 1. Filter the list of deals between 50% and 75%
 // 2. Log the list
+
+function filterDiscount() {
+  const filteredDeals = [];
+
+  for (const deal of deals) {
+    if (deal.discount >= 50 && deal.discount <= 75) {
+      filteredDeals.push(deal);
+    }
+  }
+
+  console.log(filteredDeals);
+}
+
+filterDiscount();
 
 // 🎯 TODO 7: Average percentage discount
 // 1. Determine the average percentage discount of the deals
