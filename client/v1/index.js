@@ -616,3 +616,4 @@ localStorage.setItem("favoriteDealers", JSON.stringify(MY_FAVORITE_DEALERS));
 console.log(localStorage.getItem("favoriteDealers"));
 const data = JSON.parse(localStorage.getItem("favoriteDealers"));
 console.log(data);
+localStorage.getItem("favoriteDealers")
