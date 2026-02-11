@@ -145,9 +145,32 @@ Average_percentage_discount();
 // 2. Log the variable
 // 3. Log the number of deals by community
 
+function dealsByCommunity() {
+  const communities = {};
+  for (const deal of deals) {
+    if (!communities[deal.community]) {
+      communities[deal.community] = [];
+    }
+    communities[deal.community].push(deal);
+  }
+  console.log(communities);
+}
+
+dealsByCommunity();
+
+
 // 🎯 TODO 9: Sort by price for each community
 // 1. For each community, sort the deals by discount price, from highest to lowest
 // 2. Log the sort
+
+function sortEachCommunity() {
+  for (const community in communities) {
+    communities[community].sort((a, b) => b.discount - a.discount);
+  }
+  console.log(communities);
+}
+
+sortEachCommunity();
 
 // 🎯 TODO 10: Sort by date for each community
 // 1. For each set, sort the deals by date, from old to recent
