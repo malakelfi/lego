@@ -145,8 +145,9 @@ Average_percentage_discount();
 // 2. Log the variable
 // 3. Log the number of deals by community
 
+const communities = {};
+
 function dealsByCommunity() {
-  const communities = {};
   for (const deal of deals) {
     if (!communities[deal.community]) {
       communities[deal.community] = [];
@@ -572,11 +573,11 @@ sealedCamera = {
 
 // 3. Update `camera` property with `favorite` to true WITHOUT changing sealedCamera properties
 
-let camera = { ...sealedCamera };
-camera.favorite = true;
+let camera_2 = { ...sealedCamera };
+camera_2.favorite = true;
 
 console.log(sealedCamera);
-console.log(camera);
+console.log(camera_2);
 
 
 // 🎯 TODO 16: Compute the profitability
