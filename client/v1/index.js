@@ -110,6 +110,18 @@ filterDiscount();
 // 1. Determine the average percentage discount of the deals
 // 2. Log the average
 
+function Average_percentage_discount() {
+  let somme = 0;
+  let average;
+  for (const moy of deals) {
+    somme = somme + moy.discount
+  }
+  average = somme/ deals.length;
+  console.log(average);
+}
+
+Average_percentage_discount();
+
 /**
  * 🏎
  * We are almost done with the `deals` variable
