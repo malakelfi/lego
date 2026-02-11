@@ -53,10 +53,11 @@ console.log(nb_deals);
 // 1. Create a variable and assign it the list of shopping community name only
 // 2. Log the variable
 // 3. Log how many shopping communities we have
+console.log(deals[0]);
 
 const tab_name_deal = [];
 for (const deal of deals) {
-   tab_name_deal.push(deal.name);
+   tab_name_deal.push(deal.community);
 }
 const nb_name_deals = tab_name_deal.length;
 console.log(tab_name_deal);
@@ -66,6 +67,13 @@ console.log(nb_name_deals);
 // 1. Create a function to sort the deals by price
 // 2. Create a variable and assign it the list of sets by price from lowest to highest
 // 3. Log the variable
+
+function sortByPrice() {
+  deals.sort((a, b) => a.price - b.price);
+  console.log(deals);
+}
+
+sortByPrice();
 
 // 🎯 TODO 5: Sort by date
 // 1. Create a function to sort the deals by date
