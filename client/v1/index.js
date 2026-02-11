@@ -176,6 +176,14 @@ sortEachCommunity();
 // 1. For each set, sort the deals by date, from old to recent
 // 2. Log the sort
 
+function sortByDateEachCommunity() {
+  for (const community in communities) {
+    communities[community].sort((a, b) => a.published - b.published);
+  }
+  console.log(communities);
+}
+
+sortByDateEachCommunity();
 
 /**
  * 🧥
