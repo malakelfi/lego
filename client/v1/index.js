@@ -610,3 +610,8 @@ console.log(benefice);
 // 🎯 LAST TODO: Save in localStorage
 // 1. Save MY_FAVORITE_DEALERS in the localStorage
 // 2. log the localStorage
+
+localStorage.setItem("favoriteDealers", JSON.stringify(MY_FAVORITE_DEALERS));
+console.log(localStorage.getItem("favoriteDealers"));
+const data = JSON.parse(localStorage.getItem("favoriteDealers"));
+console.log(data);
