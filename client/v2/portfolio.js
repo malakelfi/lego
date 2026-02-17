@@ -32,6 +32,32 @@ const selectLegoSetIds = document.querySelector('#lego-set-id-select');
 const sectionDeals= document.querySelector('#deals');
 const spanNbDeals = document.querySelector('#nbDeals');
 
+// --- Filter button: By best discount (> 50%) ---
+const btnBestDiscount = document.createElement('button');
+btnBestDiscount.textContent = 'By best discount';
+
+// On l'ajoute près du select "Show"
+selectShow.parentElement.appendChild(btnBestDiscount);
+
+// (optionnel) bouton pour revenir à l'affichage normal
+const btnReset = document.createElement('button');
+btnReset.textContent = 'Reset';
+selectShow.parentElement.appendChild(btnReset);
+
+
+const btnMostCommented = document.createElement('button');
+btnMostCommented.textContent = 'By most commented';
+selectShow.parentElement.appendChild(btnMostCommented);
+
+
+const btnMosthot = document.createElement('button');
+btnMosthot.textContent = 'By hot deals';
+selectShow.parentElement.appendChild(btnMosthot);
+
+
+const selectSort = document.querySelector('#sort-select');
+
+
 /**
  * Set global value
  * @param {Array} result - deals to display
@@ -76,6 +102,7 @@ const renderDeals = deals => {
   const div = document.createElement('div');
   const template = deals
     .map(deal => {
+      console.log(deal);
       return `
       <div class="deal" id=${deal.uuid}>
         <span>${deal.id}</span>
@@ -156,4 +183,73 @@ document.addEventListener('DOMContentLoaded', async () => {
 
   setCurrentDeals(deals);
   render(currentDeals, currentPagination);
+});
+
+
+
+btnBestDiscount.addEventListener('click', async () => {
+  // récupère tous les deals d'un coup
+  const allData = await fetchDeals(1, currentPagination.count);
+  const allDeals = allData.result;
+
+  // filtre discount > 50 (null devient 0 avec Number())
+  const filtered = allDeals.filter(deal => Number(deal.discount) > 50);
+
+  render(filtered, { currentPage: 1, pageCount: 1, count: filtered.length });
+});
+
+btnReset.addEventListener('click', async () => {
+  const deals = await fetchDeals(1, Number(selectShow.value));
+  setCurrentDeals(deals);
+  render(currentDeals, currentPagination);
+});
+
+
+
+
+btnMostCommented.addEventListener('click', async () => {
+  // récupérer tous les deals
+  const allData = await fetchDeals(1, currentPagination.count);
+  const allDeals = allData.result;
+
+  // filtrer ceux avec > 15 commentaires
+  const filtered = allDeals.filter(deal => Number(deal.comments) > 15);
+
+  // afficher
+  render(filtered, { currentPage: 1, pageCount: 1, count: filtered.length });
+});
+
+
+
+btnMosthot.addEventListener('click', async () => {
+  // récupérer tous les deals
+  const allData = await fetchDeals(1, currentPagination.count);
+  const allDeals = allData.result;
+
+  // filtrer ceux avec > 100 temperature
+  const filtered = allDeals.filter(deal => Number(deal.temperature) > 100);
+
+  // afficher
+  render(filtered, { currentPage: 1, pageCount: 1, count: filtered.length });
+});
+
+
+
+selectSort.addEventListener('change', () => {
+  // on récupère ce que l'utilisateur a choisi (ex: "Cheaper" ou "cheaper")
+  const choice = String(selectSort.value).toLowerCase();
+
+  // copie des deals actuels
+  const sortedDeals = [...currentDeals];
+
+  if (choice.includes('cheap')) {
+    sortedDeals.sort((a, b) => Number(a.price) - Number(b.price));
+  } else if (choice.includes('expens')) {
+    sortedDeals.sort((a, b) => Number(b.price) - Number(a.price));
+  } else {
+    // si c'est "recently published" ou autre, on ne fait rien ici (pour l'instant)
+    return;
+  }
+
+  render(sortedDeals, currentPagination);
 });
