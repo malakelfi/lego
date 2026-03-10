@@ -224,21 +224,21 @@ const renderDeals = deals => {
   const template = deals.length
     ? deals.map(deal => {
         return `
-          <article class="deal" id="${deal.uuid}">
+          <article class="deal ${isFavorite(deal.uuid) ? 'favorite' : ''}" id="${deal.uuid}">
             <div>
               <strong>${deal.id}</strong>
               <a href="${deal.link}" target="_blank" rel="noopener noreferrer">${deal.title}</a>
-              <span>${formatPrice(deal.price)} €</span>
-              <button class="favorite-btn" data-uuid="${deal.uuid}">
-                ${isFavorite(deal.uuid) ? '★ Favori' : '☆ Favori'}
+              <span class="deal-price">
+                ${formatPrice(deal.price)} €
+              </span>
+              <button class="favorite-btn ${isFavorite(deal.uuid) ? 'is-favorite' : ''}" data-uuid="${deal.uuid}">
+                ${isFavorite(deal.uuid) ? '❤️ Favori' : '⭐ Favori'}
               </button>
             </div>
-            <div>
-              <small>
+            <div class="deal-meta">
                 Remise: ${getDealDiscount(deal)}% |
                 Commentaires: ${getDealComments(deal)} |
                 Température: ${getDealTemperature(deal)}
-              </small>
             </div>
           </article>
         `;
@@ -322,16 +322,18 @@ const renderSales = sales => {
 
 const renderFilterButtons = () => {
   filtersContainer.innerHTML = `
-    <button data-filter="discount">By best discount</button>
-    <button data-filter="comments">By most commented</button>
-    <button data-filter="hot">By hot deals</button>
-    <button data-filter="favorites">By favorites</button>
-    <button data-filter="all">Reset</button>
-  `;
+  <button data-filter="discount">💸 Best discount</button>
+  <button data-filter="comments">💬 Most commented</button>
+  <button data-filter="hot">🔥 Hot deals</button>
+  <button data-filter="favorites">❤️ Favorites</button>
+  <button data-filter="all">🔄 Reset</button>
+`;
 
   filtersContainer.querySelectorAll('button').forEach(button => {
     if (button.dataset.filter === activeFilter) {
-      button.style.fontWeight = 'bold';
+      button.style.background = '#1a4fd7';
+      button.style.color = '#fff';
+      button.style.borderColor = '#1a4fd7';
     }
 
     button.addEventListener('click', () => {
