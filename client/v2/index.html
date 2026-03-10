@@ -3,9 +3,248 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>🧱 Lego | Predictability of a lego set deal</title>
+    <style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 30px;
+  font-family: Arial, sans-serif;
+  color: #222;
+  background: linear-gradient(180deg, #fff7cc 0%, #ffe4ec 45%, #dff6ff 100%);
+}
+
+h1{
+  margin-top:0;
+  font-size:64px;
+  font-weight:900;
+  color:#e63946;
+  text-shadow:
+    3px 3px 0 #ffd60a,
+    6px 6px 0 #f77f00;
+}
+
+.lego-brick{
+  margin-right:12px;
+  font-size:64px;
+}
+
+h2 {
+  color: #2457d6;
+  font-size: 28px;
+}
+
+section {
+  background: #fff;
+  padding: 22px;
+  margin-bottom: 22px;
+  border-radius: 22px;
+  border: 3px solid #ffd43b;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+section::before {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 10px;
+  margin-bottom: 18px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #ff595e, #ffca3a, #8ac926, #1982c4);
+}
+
+#options {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 15px;
+}
+
+#filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+select {
+  padding: 10px 14px;
+  border: 2px solid #d0d7de;
+  border-radius: 14px;
+  background: #fff;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 16px;
+  border: 2px solid #cbd5e1;
+  border-radius: 14px;
+  background: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  transform: translateY(-2px) scale(1.03);
+  background: #fff7cc;
+}
+
+#filters button:nth-child(1) {
+  border-color: #ff6b6b;
+}
+
+#filters button:nth-child(2) {
+  border-color: #4dabf7;
+}
+
+#filters button:nth-child(3) {
+  border-color: #ffd43b;
+}
+
+#filters button:nth-child(4) {
+  border-color: #ff85a1;
+}
+
+#filters button:nth-child(5) {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+#indicators{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:12px 40px;
+  max-width:700px;
+}
+
+#indicators h2{
+  grid-column:1 / -1;
+}
+
+#indicators div{
+  display:flex;
+  justify-content:space-between;
+}
+
+#indicators span:last-child {
+  font-weight: bold;
+}
+
+.deal {
+  padding: 14px 18px;
+  margin-bottom: 10px;
+  border: 2px solid transparent;
+  border-radius: 18px;
+  transition: 0.2s;
+}
+
+.deal:hover {
+  background: #f6f9ff;
+  border-color: #91caff;
+  transform: scale(1.01);
+}
+
+.deal > div:first-child {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.deal a,
+.sale a {
+  margin: 0 8px;
+  color: #2457d6;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.deal a:hover,
+.sale a:hover {
+  color: #e63946;
+  text-decoration: underline;
+}
+
+.deal-price {
+  display: inline-block;
+  padding: 6px 12px;
+  border: 2px solid #95d5b2;
+  border-radius: 999px;
+  background: #d8f3dc;
+  color: #087f23;
+  font-weight: bold;
+}
+
+.deal-meta{
+  margin-top:6px;
+  color:#6b7280;
+  font-size:14px;
+}
+
+.favorite-btn {
+  margin-left: 10px;
+  padding: 10px 16px;
+  border: 3px solid #bfc8d6;
+  border-radius: 18px;
+  background: #fff;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.favorite-btn:hover {
+  background: #fff4f8;
+  border-color: #ff8fab;
+  transform: translateY(-1px);
+}
+
+.favorite-btn.is-favorite {
+  background: #ffe3ec;
+  color: #c9184a;
+  border-color: #ff4d6d;
+}
+
+.sale {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+.sale:last-child {
+  border-bottom: none;
+}
+
+.sale span {
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #e9f8ef;
+  color: #0a7b36;
+  font-weight: 600;
+}
+
+.deal.favorite{
+  border-color:#ff8fab;
+  background:#fff6fa;
+}
+
+.deal a,
+.sale a{
+  cursor:pointer;
+}
+
+</style>
+
   </head>
   <body>
-    <h1>Lego</h1>
+    <h1><span class="lego-brick">🧱</span> Lego</h1>
     <section id="options">
       <div id="show">
         <label for="show-select">Show:</label>
@@ -56,21 +295,21 @@
         <span id="avgSalesPrice">0</span>
       </div>
       <div>
-        <span>p5 sales price value</span>
-        <span>0</span>
-      </div>
-      <div>
-        <span>p25 sales price value</span>
-        <span>0</span>
-      </div>
-      <div>
-        <span>p50 sales price value</span>
-        <span>0</span>
-      </div>
-      <div>
-        <span>Lifetime value</span>
-        <span>10 days</span>
-      </div>
+  <span>p5 sales price value</span>
+  <span id="p5SalesPrice">0</span>
+</div>
+<div>
+  <span>p25 sales price value</span>
+  <span id="p25SalesPrice">0</span>
+</div>
+<div>
+  <span>p50 sales price value</span>
+  <span id="p50SalesPrice">0</span>
+</div>
+<div>
+  <span>Lifetime value</span>
+  <span id="lifetimeValue">10 days</span>
+</div>
     </section>
     <section id="deals"></section>
     <script type="text/javascript" charset="UTF-8" src="utils.js"></script>
