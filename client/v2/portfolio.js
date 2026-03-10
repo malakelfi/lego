@@ -272,8 +272,19 @@ const renderPagination = pagination => {
 
 const renderLegoSetIds = deals => {
   const ids = extractSetIds(deals);
-  const options = ids.map(id => `<option value="${id}">${id}</option>`).join('');
+  const previousSelectedId = selectLegoSetIds.value;
+
+  const options = ids
+    .map(id => `<option value="${id}">${id}</option>`)
+    .join('');
+
   selectLegoSetIds.innerHTML = options;
+
+  if (ids.includes(previousSelectedId)) {
+    selectLegoSetIds.value = previousSelectedId;
+  } else if (ids.length > 0) {
+    selectLegoSetIds.value = ids[0];
+  }
 };
 
 const renderIndicators = (deals, sales) => {
@@ -358,13 +369,15 @@ const render = (deals, pagination, sales = []) => {
 // =========================
 // LISTENERS
 // =========================
-selectShow.addEventListener('change', async event => {
-  const size = parseInt(event.target.value, 10);
-  const deals = await fetchDeals(1, size);
+selectPage.addEventListener('change', async event => {
+  const page = parseInt(event.target.value, 10);
+  const size = parseInt(selectShow.value, 10);
 
+  const deals = await fetchDeals(page, size);
   setCurrentDeals(deals);
+  renderLegoSetIds(currentDeals);
 
-  const selectedId = selectLegoSetIds.value || extractSetIds(currentDeals)[0];
+  const selectedId = selectLegoSetIds.value;
   const sales = await fetchSales(selectedId);
   setCurrentSales(sales);
 
