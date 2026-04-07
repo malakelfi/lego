@@ -1,27 +1,9 @@
 [
   {
-    "title": "LEGO 76419 Harry Potter Le Château et Le Domaine de Poudlard",
-    "price": 128.99,
-    "discount": 0,
-    "temperature": 1,
-    "link": "https://www.dealabs.com/bons-plans/lego-76419-harry-potter-le-chateau-et-le-domaine-de-poudlard-3310281",
-    "image": "https://static-pepper.dealabs.com/threads/raw/tRQRL/3310281_1/re/202x202/qt/70/3310281_1.jpg",
-    "source": "dealabs"
-  },
-  {
-    "title": "LEGO Architecture Le Château de Neuschwanstein",
-    "price": 204.99,
-    "discount": 0,
-    "temperature": 4,
-    "link": "https://www.dealabs.com/bons-plans/lego-architecture-le-chateau-de-neuschwanstein-3310278",
-    "image": "https://static-pepper.dealabs.com/threads/raw/LXBSE/3310278_1/re/202x202/qt/70/3310278_1.jpg",
-    "source": "dealabs"
-  },
-  {
     "title": "LEGO Speed Champions 77242 - Voiture F1 Ferrari SF-24",
     "price": 18.99,
     "discount": 2,
-    "temperature": 4,
+    "temperature": 1,
     "link": "https://www.dealabs.com/bons-plans/lego-speed-champions-voiture-f1-ferrari-sf-24-3310272",
     "image": "https://static-pepper.dealabs.com/threads/raw/2FSGL/3310272_1/re/202x202/qt/70/3310272_1.jpg",
     "source": "dealabs"
@@ -84,7 +66,7 @@
     "title": "Jeu de construction Lego Speed Champions Supercar Ferrari F40 - 76934",
     "price": 19.91,
     "discount": 13,
-    "temperature": 271,
+    "temperature": 273,
     "link": "https://www.dealabs.com/bons-plans/lego-speed-champions-supercar-ferrari-f40-vehicule-jouet-a-construire-set-de-voiture-avec-une-minifigurine-de-pilote-3310043",
     "image": "https://static-pepper.dealabs.com/threads/raw/7b1b5/3310043_1/re/202x202/qt/70/3310043_1.jpg",
     "source": "dealabs"
@@ -174,7 +156,7 @@
     "title": "Lego Star Wars 75407 - Brick-Built Star Wars Logo (via 10€ cagnottés)",
     "price": 10,
     "discount": 20,
-    "temperature": 165,
+    "temperature": 170,
     "link": "https://www.dealabs.com/bons-plans/lego-star-wars-brick-built-star-wars-logo-3309716",
     "image": "https://static-pepper.dealabs.com/threads/raw/YcLR9/3309716_1/re/202x202/qt/70/3309716_1.jpg",
     "source": "dealabs"
@@ -183,7 +165,7 @@
     "title": "[Précommande] Lego Marvel 76354 L’héliporteur du Shield",
     "price": 280.9,
     "discount": 0,
-    "temperature": 206,
+    "temperature": 208,
     "link": "https://www.dealabs.com/bons-plans/lego-76454-lheliporteur-du-shield-marvel-3309676",
     "image": "https://static-pepper.dealabs.com/threads/raw/cm59G/3309676_1/re/202x202/qt/70/3309676_1.jpg",
     "source": "dealabs"
@@ -192,7 +174,7 @@
     "title": "Lego Star Wars 75417 - Le marcheur AT-ST (via 22,80€ cagnottés)",
     "price": 22.8,
     "discount": 15,
-    "temperature": 370,
+    "temperature": 372,
     "link": "https://www.dealabs.com/bons-plans/lego-star-wars-75417-le-marcheur-at-st-via-22w80eur-cagnottes-3309615",
     "image": "https://static-pepper.dealabs.com/threads/raw/T70NG/3309615_1/re/202x202/qt/70/3309615_1.jpg",
     "source": "dealabs"
@@ -246,7 +228,7 @@
     "title": "Sélection de Lego en promotion - Ex : Lego Star Wars 75389 Le Faucon Noir (Via 20,55€ sur la Carte de Fidélité)",
     "price": 20.55,
     "discount": 15,
-    "temperature": 206,
+    "temperature": 209,
     "link": "https://www.dealabs.com/bons-plans/selection-de-lego-en-promotion-jusqua-25-sur-la-carte-leclerc-exemple-lego-star-wars-75389-le-faucon-noir-3309599",
     "image": "https://static-pepper.dealabs.com/threads/raw/bR8Vs/3309599_1/re/202x202/qt/70/3309599_1.jpg",
     "source": "dealabs"
@@ -267,6 +249,24 @@
     "temperature": 60,
     "link": "https://www.dealabs.com/bons-plans/lego-star-wars-75379-r2d2-3309594",
     "image": "https://static-pepper.dealabs.com/threads/raw/e9V43/3309594_1/re/202x202/qt/70/3309594_1.jpg",
+    "source": "dealabs"
+  },
+  {
+    "title": "Lego Star Wars 75431 Pack de Combat du 327ème Corps d'Armée (Via 7,75€ sur la Carte de Fidélité)",
+    "price": 7.75,
+    "discount": 25,
+    "temperature": 96,
+    "link": "https://www.dealabs.com/bons-plans/lego-star-wars-75431-pack-de-combat-du-327eme-corps-darmee-via-775eur-cagnottes-3309593",
+    "image": "https://static-pepper.dealabs.com/threads/raw/dDSVG/3309593_1/re/202x202/qt/70/3309593_1.jpg",
+    "source": "dealabs"
+  },
+  {
+    "title": "Lego Star Wars 75399 Andor : Le Chasseur Stellaire U-Wing de l’Alliance Rebelle (Via 10,2€ sur la Carte de Fidélité)",
+    "price": 10.2,
+    "discount": 20,
+    "temperature": 202,
+    "link": "https://www.dealabs.com/bons-plans/lego-star-wars-andor-le-chasseur-stellaire-u-wing-de-lalliance-rebelle-75399-via-1020eur-sur-la-carte-de-fidelite-3309590",
+    "image": "https://static-pepper.dealabs.com/threads/raw/ekAv0/3309590_1/re/202x202/qt/70/3309590_1.jpg",
     "source": "dealabs"
   }
 ]
