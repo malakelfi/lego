@@ -11,7 +11,9 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "helmet": "^8.1.0",
+    "node-fetch": "^3.3.2",
     "parse-domain": "^8.3.0",
+    "playwright": "^1.59.1",
     "require-all": "^3.0.0",
     "uuid": "^13.0.0"
   },
